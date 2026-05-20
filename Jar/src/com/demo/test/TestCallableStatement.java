@@ -12,8 +12,8 @@ public class TestCallableStatement {
 		//step1 Register Driver
 				try {
 					DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-					String url="jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true";
-					Connection conn=DriverManager.getConnection(url,"root","root1234");
+					String url="jdbc:mysql://192.168.10.112:3306/dac1?useSSL=false&allowPublicKeyRetrieval=true";
+					Connection conn=DriverManager.getConnection(url,"dac1","welcome");
 					if(conn!=null) {
 						System.out.println("Connection done");
 					}else {
@@ -29,7 +29,7 @@ public class TestCallableStatement {
 				} catch (SQLException e) {
 					System.out.println("connection not done");
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 				
 

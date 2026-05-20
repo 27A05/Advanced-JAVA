@@ -18,7 +18,7 @@ public class TestPreparedStatement {
 			String url="jdbc:mysql://192.168.10.112:3306/dac1?useSSL=false&allowPublicKeyRetrieval=true";
 			Connection conn=DriverManager.getConnection(url,"dac1","welcome");
 			//step 3 create statement
-		    PreparedStatement pst=conn.prepareStatement("select * from product");
+		    PreparedStatement pst=conn.prepareStatement("select * from product1");
 	        //step 4 execute query
 		    ResultSet rs=pst.executeQuery();
 		    while(rs.next()) {
@@ -36,7 +36,7 @@ public class TestPreparedStatement {
 		    int qty=44;
 		    double price=4567.89;
 		    LocalDate ldt=LocalDate.now();
-		    PreparedStatement pst1=conn.prepareStatement("insert into product values(?,?,?,?,?)");
+		    PreparedStatement pst1=conn.prepareStatement("insert into product1 values(?,?,?,?,?)");
 		    pst1.setInt(1, id);
 		    pst1.setString(2, name);
 		    pst1.setInt(3, qty);
@@ -51,7 +51,7 @@ public class TestPreparedStatement {
 		    }
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
-			 e.printStackTrace();
+			 //e.printStackTrace();
 		}
 		
 

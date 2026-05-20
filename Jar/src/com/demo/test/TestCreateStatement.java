@@ -23,7 +23,7 @@ public class TestCreateStatement {
 			Statement st=conn.createStatement();
 			
 			//step 4 execute the statement
-			ResultSet rs=st.executeQuery("select * from product");
+			ResultSet rs=st.executeQuery("select * from product1");
 			
 			//step 5 navigate through resultset
 			while(rs.next()) {
@@ -46,7 +46,7 @@ public class TestCreateStatement {
 			int qty=45;
 			double price=456.56;
 			LocalDate dt=LocalDate.now();
-			String query="insert into product values("+id+",'"+name+"',"+qty+","+price+",'"+dt.toString()+"')";
+			String query="insert into product1 values("+id+",'"+name+"',"+qty+","+price+",'"+dt.toString()+"')";
 			System.out.println(query);
 			int n=st.executeUpdate(query);
 			if(n>0) {
@@ -57,7 +57,7 @@ public class TestCreateStatement {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 
 	}
